@@ -1,7 +1,28 @@
+var tl = gsap.timeline();
 
-gsap.to(".imagecontainer", {
-    ease: "expo.inOut",
+
+
+
+
+
+
+
+
+tl.to(".imagecontainer", {
+    ease: "expo.easeInOut",
     width: "100%",
-    duration: 2,
     stagger: 2
 });
+
+to(".text h1", {
+    ease: expo.easeInOut,
+    stagger: 2,
+    top: 0
+})
+.to(".text h1",{
+    delay: 2,
+    ease: expo.easeInOut,
+    stagger: 2,
+    top: "-100%"
+})
+

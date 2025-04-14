@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy', sans-serif;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  #main {
+    width: 100%;
+    background-color: #e0e0e0; 
+    padding-bottom: 50px;
+  }
+  #nav {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background-color: #d4d4d4;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  #nav-image {
+    height: 40px;
+  }
+  #nav-part2 {
+    display: flex;
+    gap: 30px;
+  }
+  #nav-part2 h4 {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  #nav-part2 h4:hover {
+    color: #ff3c3c;
+  }
+  
+  #hero {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    flex-wrap: wrap;
+  }
+  #hero-text {
+    max-width: 500px;
+  }
+  #hero-text h1 {
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+  #hero-text h1 span {
+    color: #ff3c3c;
+  }
+  #hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  #hero-text button {
+    padding: 15px 30px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  #hero-text button:hover {
+    background-color: #ff3c3c;
+  }
+  
+
+  #hero-images {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #hero-images img {
+    width: 200px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  #hero-images img:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    #hero {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #nav-part2 {
+      display: none;
+    }
+    #hero-text h1 {
+      font-size: 36px;
+    }
+  }
+  
