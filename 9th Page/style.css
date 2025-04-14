@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy', sans-serif;
+    color: white;
+  }
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  #main {
+    width: 100%;
+    background: #000;
+  }
+  
+
+  #nav {
+    height: 100px;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #nav-part2 {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  #nav h1 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: capitalize;
+  }
+  #nav i {
+    font-size: 20px;
+  }
+  #nav h5 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+  #nav h5:hover {
+    color: red;
+  }
+  #nav img {
+    width: 60px;
+    height: auto;
+  }
+  #line {
+    width: 1px;
+    height: 30px;
+    background-color: gray;
+  }
+  
+  
+  #content {
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+
+  #left {
+    width: 36%;
+    padding: 120px 60px;
+    animation: fadeInLeft 1.5s ease forwards;
+    opacity: 0;
+  }
+  @keyframes fadeInLeft {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  #left h1 {
+    font-size: 64px;
+    line-height: 72px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  #left h1 span {
+    color: red;
+    font-weight: 600;
+  }
+  #left p {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+    color: #ccc;
+  }
+  #left button {
+    background-color: red;
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    font-size: 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  #left button:hover {
+    background-color: #c50000;
+    box-shadow: 0 0 15px red;
+  }
+  
+
+  #center {
+    width: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #center-bg {
+    background: url('https://pngimg.com/uploads/coca_cola/coca_cola_PNG13.png') center/contain no-repeat;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 1000px 1000px 0 0;
+    height: 80%;
+    width: 90%;
+    animation: floatBottle 3s ease-in-out infinite alternate;
+  }
+  @keyframes floatBottle {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  #right {
+    width: 36%;
+    background: url('https://images.unsplash.com/photo-1615824160707-f0c1f5093a57') center/cover no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+  
+
+  @media (max-width: 768px) {
+    #content {
+      flex-direction: column;
+    }
+    #left, #center, #right {
+      width: 100%;
+      padding: 30px;
+    }
+    #nav-part2 {
+      display: none;
+    }
+  }
+  
