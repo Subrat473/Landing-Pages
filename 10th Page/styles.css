@@ -1,0 +1,155 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  h1, p {
+    margin: 0;
+  }
+  
+  button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #1a202c;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #2d3748;
+    transform: scale(1.05);
+  }
+  
+
+  #header {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #header nav {
+    display: flex;
+    gap: 30px;
+  }
+  
+  #header nav a {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  #header nav a:hover {
+    color: #1a202c;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background: linear-gradient(to right, #3b82f6, #9333ea);
+    padding: 150px 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 22px;
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .demo-btn, .video-btn {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .demo-btn {
+    background-color: #1a202c;
+    color: white;
+  }
+  
+  .demo-btn:hover {
+    background-color: #2d3748;
+  }
+  
+  .video-btn {
+    border: 2px solid #fff;
+    color: white;
+  }
+  
+  .video-btn:hover {
+    background-color: #fff;
+    color: #1a202c;
+  }
+  
+ 
+  #features {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .feature {
+    width: 30%;
+  }
+  
+  .feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    color: #555;
+  }
+  
+  
+  #footer {
+    background-color: #1a202c;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
