@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaOS - The Future Workspace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7f5af0;
+      --secondary: #2cb67d;
+      --dark: #16161a;
+      --light: #fffffe;
+      --gray: #94a1b2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background: var(--primary);
+      color: var(--light);
+    }
+
+    .navbar .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--light);
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    #themeToggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--light);
+    }
+
+  
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6rem 5%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--light);
+      text-align: center;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .cta {
+      background: var(--light);
+      color: var(--primary);
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1.5rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .cta:hover {
+      background: var(--primary);
+      color: var(--light);
+    }
+
+    
+    .features-grid {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+      padding: 5rem 5%;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: var(--light);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: 0.3s ease;
+      text-align: center;
+      flex: 1 1 250px;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .feature-card p {
+      font-size: 1.1rem;
+      color: var(--gray);
+    }
+
+    
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    
+    .dark-mode {
+      background-color: var(--dark);
+      color: var(--light);
+    }
+
+    .dark-mode .navbar,
+    .dark-mode .cta {
+      background: var(--dark);
+      color: var(--light);
+    }
+
+    .dark-mode .feature-card {
+      background: var(--dark);
+      color: var(--light);
+    }
+  </style>
+</head>
+<body>
+ 
+  <header class="navbar">
+    <div class="logo">NovaOS</div>
+    <nav>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>NovaOS</span> - The Future of Workspaces</h1>
+      <p>Revolutionizing the way you work. Join the next-gen workspace.</p>
+      <button class="cta">Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/500" alt="hero-image" />
+    </div>
+  </section>
+
+  <section id="features" class="features-grid">
+    <div class="feature-card">
+      <h3>Seamless Collaboration</h3>
+      <p>Work together from anywhere in real-time, no matter the distance.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Real-time Analytics</h3>
+      <p>Track your performance and make data-driven decisions effortlessly.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cloud Integration</h3>
+      <p>Store, share, and access your files seamlessly from the cloud.</p>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2025 NovaOS. All Rights Reserved.</p>
+  </footer>
+
+
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      toggleBtn.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
