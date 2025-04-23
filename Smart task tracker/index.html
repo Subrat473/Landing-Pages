@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+        
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Task Tracker</h1>
+            <label class="theme-toggle">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card total">
+                <h3 id="total-tasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+            <div class="stat-card completed">
+                <h3 id="completed-tasks">0</h3>
+                <p>Completed</p>
+            </div>
+            <div class="stat-card pending">
+                <h3 id="pending-tasks">0</h3>
+                <p>Pending</p>
+            </div>
+        </div>
+
+        <form class="task-form" id="task-form">
+            <input type="text" class="task-input" id="task-input" placeholder="Add a new task..." required>
+            <select class="category-select" id="category-select">
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="urgent">Urgent</option>
+            </select>
+            <button type="submit" class="add-btn">Add Task</button>
+        </form>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="work">Work</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <button class="filter-btn" data-filter="urgent">Urgent</button>
+        </div>
+
+        <ul class="task-list" id="task-list">
+            
+        </ul>
+    </div>
+
+    <script src="script.js">
+     
+    </script>
+</body>
+</html>
