@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Login</title>
+    <style>
+        :root {
+            --primary-color: #6200ee;
+            --primary-light: #9e47ff;
+            --primary-dark: #0400ba;
+            --secondary-color: #03dac6;
+            --background: #121212;
+            --surface: #1e1e1e;
+            --error: #cf6679;
+            --on-primary: #ffffff;
+            --on-secondary: #000000;
+            --on-background: #ffffff;
+            --on-surface: #ffffff;
+            --on-error: #000000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--on-background);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-container {
+            background-color: var(--surface);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--primary-light);
+        }
+
+        .login-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--on-surface);
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.2);
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+        }
+
+        .forgot-password a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: var(--on-primary);
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background-color: var(--primary-light);
+        }
+
+        .login-button:active {
+            background-color: var(--primary-dark);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .signup-link a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 38px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.5);
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: var(--on-surface);
+        }
+
+        
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Welcome Back</h1>
+            <p>Please enter your credentials to login</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username or Email</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username or email" required>
+                <div class="error-message" id="username-error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <span class="password-toggle" id="togglePassword">👁️</span>
+                <div class="error-message" id="password-error"></div>
+            </div>
+            
+            <div class="remember-forgot">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </div>
+            
+            <button type="submit" class="login-button">Login</button>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="#">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+            });
+            
+            
+            const loginForm = document.getElementById('loginForm');
+            const usernameError = document.getElementById('username-error');
+            const passwordError = document.getElementById('password-error');
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                
+                usernameError.style.display = 'none';
+                passwordError.style.display = 'none';
+                
+             
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value.trim();
+                
+               
+                let isValid = true;
+                
+                if (username === '') {
+                    usernameError.textContent = 'Username or email is required';
+                    usernameError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (password === '') {
+                    passwordError.textContent = 'Password is required';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                } else if (password.length < 6) {
+                    passwordError.textContent = 'Password must be at least 6 characters';
+                    passwordError.style.display = 'block';
+                    isValid = false;
+                }
+                
+              
+                if (isValid) {
+
+                    console.log('Login submitted:', { username, password });
+                    
+                   
+                    alert('Login successful! (This is a demo)');
+                    
+            
+                    loginForm.reset();
+                }
+            });
+            
+            
+            const loginContainer = document.querySelector('.login-container');
+            loginContainer.style.opacity = '0';
+            loginContainer.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                loginContainer.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                loginContainer.style.opacity = '1';
+                loginContainer.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
